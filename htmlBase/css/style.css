@@ -74,14 +74,3 @@
 tr:hover {
   background-color: tomato;
 }
-
-@media (min-width: 575px) {
-  .contenedor {
-    display: grid;
-    grid-template-areas:
-      "header header"
-      "nav nav"
-      "main aside"            
-      "footer footer";
-  }    
-}

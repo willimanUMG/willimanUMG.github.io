@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Empresa "Online Shop"</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body class="d-flex flex-column">
+    <script type="module" src="./scripts/sharedUI.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
+    <general-header></general-header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/confirmacionPedido.html">Confirmacion Pedido</a>
+            </li>            
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/registroProductos.html">Registro Productos</a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="p-5">
+      <div class="row h-100">
+        <div class="col-md-4 px-2 pb-5">
+          <h2>Pedido</h2>
+          <table class="table mt-3">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acción</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="resumen">
+                <th scope="row" colspan="5">Pedido vacío!</th>
+              </tr>
+            </tfoot>
+          </table>
+          <button class="btn btn-success" onClick="ConfirmarClick()">Confirmar pedido</button>
+        </div>
+        <div class="col-md-8 h-100">
+          <h2>Productos</h2>
+          <div class="row" id="cardsProductos"></div>
+        </div>
+      </div>
+    </div>
+
+    <template id="template-productos" class="card-productos">
+      <div class="col-12 mb-2 col-md-4">
+        <div class="card">
+          <img class="img-thumbnai" id="imagenProducto" />
+          <div class="card-body">
+            <h5 id="nombreProduco">Titulo</h5>
+            <div>$<span id="precioProducto">precio</span></div>
+            <button class="btn btn-primary" id="comprarProducto">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="template-compras">
+      <tr>
+        <th scope="row" id="listID"></th>
+        <td id="listNombre"></td>
+        <td id="listCantidad"></td>
+        <td>
+          <button class="btn btn-info btn-sm" id="addProducto">+</button>
+          <button class="btn btn-danger btn-sm" id="removeProducto">-</button>
+        </td>
+        <td>$<span id="listPrecio"></span></td>
+      </tr>
+    </template>
+
+    <template id="template-resumen">
+      <th scope="row" colspan="2">Total productos</th>
+      <td id="cantTotal">10</td>
+      <td>
+        <button class="btn btn-danger btn-sm" id="vaciar-compras">
+          limpiar
+        </button>
+      </td>
+      <td class="font-weight-bold">$<span id="precioTotal">5000</span></td>
+    </template>
+
+    <general-footer class="mt-auto"></general-footer>
+    <script src="./scripts/app.js"></script>
+  </body>
+</html>

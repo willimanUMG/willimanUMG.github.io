@@ -1,0 +1,38 @@
+* {
+    font-family: sans-serif;
+}
+
+
+body {
+    height: 100vh;
+    margin: 0;
+}
+
+header {
+    background-image: linear-gradient(to left, #0070C0, #C14795);
+    padding: 10px;
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    height: 150px;
+    background-image: linear-gradient(to left, #0070C0, #C14795);
+    padding: 10px;
+    width: 100%;
+}
+
+footer p {
+    text-align: center;
+    color: white;
+    white-space: pre-line;
+}
+
+td {
+    vertical-align: middle;
+}
